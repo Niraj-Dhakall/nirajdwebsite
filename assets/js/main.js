@@ -133,8 +133,8 @@
 	// Wrapper.
 		$wrapper.children()
 			.scrollex({
-				top:		'30vh',
-				bottom:		'30vh',
+				top:		'26vh',
+				bottom:		'26vh',
 				initialize:	function() {
 					$(this).addClass('is-inactive');
 				},
@@ -157,9 +157,9 @@
 	// Items.
 		$('.items')
 			.scrollex({
-				top:		'30vh',
-				bottom:		'30vh',
-				delay:		50,
+				top:		'26vh',
+				bottom:		'26vh',
+				delay:		30,
 				initialize:	function() {
 					$(this).addClass('is-inactive');
 				},
@@ -189,7 +189,7 @@
 			.scrollex({
 				top:		'30vh',
 				bottom:		'30vh',
-				delay:		50,
+				delay:		30,
 				initialize:	function() {
 					$(this).addClass('is-inactive');
 				},
