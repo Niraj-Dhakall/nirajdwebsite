@@ -115,6 +115,7 @@ input, select, textarea {
 		from { width: 0; }
 		to { width: 100%; }
 	}
+	
 
 	/* Container for the typing effect */
 	#Hello_name_Niraj_Dhakal {
@@ -156,6 +157,7 @@ input, select, textarea {
 			/* Add other styles as needed */
 		}
 /* Type */
+		
 #socials {
     position: fixed;
     top: 50%;
@@ -2308,6 +2310,7 @@ input, select, textarea {
 				background-color: #1ebdd1;
 			}
 
+			
 /* Form */
 
 	form {
