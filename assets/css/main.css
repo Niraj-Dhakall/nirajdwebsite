@@ -74,13 +74,13 @@ input, select, textarea {
 #skills-container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 	padding: 20px;
-	gap: 2px;
+	gap: 10px;
 }
 
 .skill {
-	flex: 0 1 200px;
+	flex: 1 1 150px;
 	margin: 10px;
 	text-align: center;
 }
