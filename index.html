@@ -1,194 +1,890 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-	<title>Niraj Dhakal</title>
-	<link rel="icon" href="/images/webicon.png">
-	<meta charset="utf-8" />
-	<meta name="description" content="Niraj Dhakal's personal website showcasing projects and experiences in software development.">
-	<meta name="keywords" content="Niraj Dhakal, software engineer, projects, portfolio, resume, computer science">
-	<meta name="author" content="Niraj Dhakal">
-	<!-- Open Graph Meta Tags -->
-	<meta property="og:title" content="Niraj Dhakal - Personal Website">
-	<meta property="og:description" content="Explore the projects and experiences of Niraj Dhakal, a software engineer.">
-	<meta property="og:image" content="https://nirajd.dev/images/IMG_0195.jpg">
-	<meta property="og:url" content="https://nirajd.dev">
-	<meta property="og:type" content="website">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-	<style>
-		#skills-container {
-			display: flex;
-			gap: 1.5rem;
-			overflow-x: auto;
-			padding: 1rem 0;
-			white-space: nowrap;
-		}
-		#skills-container .skill {
-			flex: 0 0 auto;
-			text-align: center;
-		}
-		#skills-container .skills {
-			height: 96px;
-		}
-		/* Make React stack icons bigger */
-		#skills-container .skill:last-child .skills {
-			height: 96px;
-		}
-		#skills-container::-webkit-scrollbar {
-			height: 8px;
-		}
-		#skills-container::-webkit-scrollbar-thumb {
-			background: #888;
-			border-radius: 4px;
-		}
-	</style>
+    <title>Niraj Dhakal - Software Engineer</title>
+    <link rel="icon" href="/images/webicon.png">
+    <meta charset="utf-8" />
+    <meta name="description" content="Niraj Dhakal's modern portfolio showcasing innovative projects and software engineering expertise.">
+    <meta name="keywords" content="Niraj Dhakal, software engineer, full-stack developer, AI, mobile apps, web development">
+    <meta name="author" content="Niraj Dhakal">
+    <meta property="og:title" content="Niraj Dhakal - Software Engineer">
+    <meta property="og:description" content="Explore the innovative projects and experiences of Niraj Dhakal, a passionate software engineer.">
+    <meta property="og:image" content="https://nirajd.dev/images/IMG_0195.jpg">
+    <meta property="og:url" content="https://nirajd.dev">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --gray: #64748b;
+            --gray-light: #94a3b8;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.1);
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
+            --shadow-card: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+        }
+        
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 50px;
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-hero);
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        .hero-text h3 {
+            font-size: 1.5rem;
+            color: var(--gray-light);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--glass);
+            transform: translateY(-3px);
+        }
+        
+        .hero-image {
+            position: relative;
+            animation: slideInRight 1s ease-out;
+        }
+        
+        .hero-image-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-card);
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.3;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* Social Links */
+        .social-links {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: slideInLeft 1.2s ease-out;
+        }
+        
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient-primary);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .skill-card {
+            background: var(--gradient-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .skill-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+        
+        .skill-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .react-stack {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(236, 72, 153, 0.1));
+        }
+        
+        .react-stack .stack-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .react-stack img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: var(--gradient-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .project-card:hover::before {
+            left: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--primary);
+        }
+        
+        .project-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        
+        .project-card h4 {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .project-card p {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .project-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .project-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        /* Experience & Education */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--gradient-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-left: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--dark);
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        
+        .timeline-item h4 {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .timeline-item ul {
+            color: var(--gray-light);
+            margin-left: 1rem;
+        }
+        
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark-light);
+            margin-top: 4rem;
+        }
+        
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.2;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .social-links {
+                position: static;
+                transform: none;
+                flex-direction: row;
+                justify-content: center;
+                margin: 2rem 0;
+            }
+            
+            nav {
+                position: static;
+                margin: 1rem;
+                border-radius: 20px;
+            }
+            
+            .section {
+                padding: 3rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .react-stack {
+                grid-column: span 1;
+            }
+            
+            .hero-image-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWZ0R1L5BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RWZ0R1L5BX');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RWZ0R1L5BX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
-gtag('config', 'G-RWZ0R1L5BX');
-</script>
-<div id="socials">
-	<a href="https://www.linkedin.com/in/nirajdhakal26" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
-	<a href="https://github.com/Niraj-Dhakall"target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224 0C100.3 0 0 100.3 0 224c0 99.7 64.7 183.5 151.4 213.2 11.1 2 15.2-4.8 15.2-10.6 0-5.2-.2-18.7-.3-36.8-61.8 13.4-74.8-29.8-74.8-29.8-10.1-25.6-24.6-32.4-24.6-32.4-20.1-13.7 1.5-13.4 1.5-13.4 22.2 1.6 33.8 22.7 33.8 22.7 19.7 33.6 51.7 23.9 64.2 18.3 2.2-14.3 7.7-23.9 14-29.4-48.5-5.5-99.4-24.2-99.4-107.6 0-23.8 8.5-43.2 22.4-58.6-2.2-5.5-9.7-28.3 2.1-58.9 0 0 18.3-5.9 60.2 22.5 17.5-4.9 36.5-7.3 55.3-7.4 18.8.1 37.8 2.5 55.3 7.4 41.8-28.4 60.1-22.5 60.1-22.5 11.8 30.6 4.3 53.4 2.1 58.9 13.9 15.4 22.4 34.8 22.4 58.6 0 83.4-50.9 102.1-99.4 107.6 7.9 6.7 15.1 19.9 15.1 40.3 0 29.1-.3 52.9-.3 60.1 0 5.8 4.1 12.7 15.2 10.6C359.3 407.5 448 323.7 448 224 448 100.3 347.7 0 224 0z"/></svg></a>
-	<a href="mailto:nirajd1@umbc.edu" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
-</div>
-<body class="is-preload">
-	<div id="wrapper" class="divided">
-		<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-			<div class="content">
-				<h3 class="hello_header_Niraj_Dhakal">Hello, I'm </h3>
-				<h1 class="Hello_name_Niraj_Dhakal">Niraj Dhakal</h1>
-				<p class="Niraj Dhakal Bio">
-					I am a Computer Science student at the University of Maryland, Baltimore County (UMBC), expected to graduate in May 2026.
-					I am seeking internships and hands-on learning opportunities to enhance my programming skills and grow as a software engineer.
-					My journey in programming began with Java in 9th grade, and I've been passionate about coding ever since.
-				</p>
-				<section class="wrapper style1 align-center">
-					<button class="resume-button" onclick="window.open('images/NirajDhakalResume.pdf','_blank')">Resume</button>
-				</section>
-			</div>
-			<div class="image">
-				<img src="images/IMG_0195.jpg" alt="Niraj Dhakal" />
-			</div>
-		</section>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+        </ul>
+    </nav>
 
-		<section class="wrapper style1 align-center">
-			<div class="inner">
-				<h2>Skills</h2>
-				<div id="skills-container">
-					<!-- Languages -->
-					<div class="skill"><img class="skills" src="https://skillicons.dev/icons?i=py" alt="Python"/><h4>Python</h4></div>
-					<div class="skill"><img class="skills" src="https://skillicons.dev/icons?i=cpp" alt="C++"/><h4>C++</h4></div>
-					<div class="skill"><img class="skills" src="https://skillicons.dev/icons?i=html,css" alt="HTML/CSS"/><h4>HTML/CSS</h4></div>
-					<div class="skill"><img class="skills" src="https://skillicons.dev/icons?i=ts" alt="TypeScript"/><h4>TypeScript</h4></div>
-					<div class="skill"><img class="skills" src="https://skillicons.dev/icons?i=go" alt="Go"/><h4>Go</h4></div>
-					<div class="skill"><img class="skills" src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL"/><h4>PostgreSQL</h4></div>
-					<div class="skill"><img class="skills" src="https://skillicons.dev/icons?i=swift" alt="Swift"/><h4>Swift</h4></div>
-					<!-- Technologies -->
-					
-				</div>
-				<div class="skill">
-					<img class="skills" src="https://skillicons.dev/icons?i=react"/>
-					<img class="skills" src="https://skillicons.dev/icons?i=next"/>
-					<img class="skills" src="https://skillicons.dev/icons?i=firebase"/>
-					<img class="skills" src="https://skillicons.dev/icons?i=tailwind"/>
-					<img class="skills" src="https://skillicons.dev/icons?i=materialui"/>
-					<h4>React Stack</h4></div>
-			</div>
-		</section>
+    <!-- Social Links -->
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/nirajdhakal26" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/Niraj-Dhakall" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:nirajd1@umbc.edu" target="_blank" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
 
-		<section class="wrapper style1 align-center">
-			<div class="inner"> 
-				<h2>Projects</h2>
-				<div class="items style1 medium onscroll-fade-in">
-					<section>
-						<h3>Pantry Tracker</h3>
-						<h4>Summer 2024</h4>
-						<p>A comprehensive full-stack web application that helps users easily manage and track their pantry items. Built using React and TypeScript for a robust and scalable user experience. Styled with Tailwind CSS and Material-UI for a clean, responsive design. Integrated with Firebase for secure data storage and powered by Next.js for server-side rendering. Features OpenAI ChatGPT integration for intelligent recipe suggestions based on available ingredients.</p>
-					</section>
-					<section>
-						<h3>iOS Movie App</h3>
-						<h4>Summer 2024</h4>
-						<p>An IMDb-like iOS app built with Swift that displays movies using the MovieDB API. Features Core Data integration for saving user's favorite movies, real-time data fetching, and user-friendly UI/UX design. This was my first comprehensive iOS application, focusing on effective project management with balanced coding, testing, and debugging for timely delivery.</p>
-						<a href="https://github.com/Niraj-Dhakall/iOS-Movie-App" target="_blank"><span class="fab style2 fa-github fa-2x"></span></a>
-						<h6>Project Github</h6>
-						<a href="https://www.loom.com/share/d562909dbe8f4089bed0e492809461c3?sid=95d3d5fe-6657-402b-acaa-c1764696ce03" target="_blank"><span class="fa fa-video-camera fa-2x"></span></a>
-						<h6>Video Demo</h6>
-					</section>
-					<section>
-						<h3>Mock Assembly Compiler</h3>
-						<p>A Python-based compiler that reads assembly-like instructions and processes them for output. This project demonstrates understanding of low-level programming concepts and compiler design principles.</p>
-						<a href="https://github.com/Niraj-Dhakall/project-2" target="_blank"><span class="fab style2 fa-github fa-2x"></span></a>
-						<h6>Project Github</h6>
-					</section>
-					
-				</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h3>Hello, I'm</h3>
+                <h1>Niraj Dhakal</h1>
+                <p>
+                    A passionate Computer Science student at UMBC, crafting innovative solutions through code. 
+                    From AI-powered applications to mobile experiences, I transform ideas into digital reality.
+                </p>
+                <div class="cta-buttons">
+                    <a href="images/NirajDhakalResume.pdf" target="_blank" class="btn-primary">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                    <a href="#projects" class="btn-secondary">
+                        <i class="fas fa-code"></i>
+                        View Projects
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-container">
+                    <img src="images/IMG_0195.jpg" alt="Niraj Dhakal" />
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<h2>Experience</h2>
-				<div class="items style1 medium onscroll-fade-in">
-					<section>
-						<h3>Student Intern @ Dogwood Gaming</h3>
-						<h4>Spring 2025</h4>
-						<ul>
-							<li>Built an AI marketing tool for trend analysis, strategy optimization, and automation</li>
-							<li>Aligned backend development with business goals using Python and Go</li>
-							<li>Implemented OAuth for authentication and built ETL pipelines for large-scale data</li>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="https://skillicons.dev/icons?i=py" alt="Python"/>
+                <h4>Python</h4>
+            </div>
+            <div class="skill-card">
+                <img src="https://skillicons.dev/icons?i=cpp" alt="C++"/>
+                <h4>C++</h4>
+            </div>
+            <div class="skill-card">
+                <img src="https://skillicons.dev/icons?i=html,css" alt="HTML/CSS"/>
+                <h4>HTML/CSS</h4>
+            </div>
+            <div class="skill-card">
+                <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript"/>
+                <h4>TypeScript</h4>
+            </div>
+            <div class="skill-card">
+                <img src="https://skillicons.dev/icons?i=go" alt="Go"/>
+                <h4>Go</h4>
+            </div>
+            <div class="skill-card">
+                <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL"/>
+                <h4>PostgreSQL</h4>
+            </div>
+            <div class="skill-card">
+                <img src="https://skillicons.dev/icons?i=swift" alt="Swift"/>
+                <h4>Swift</h4>
+            </div>
+            <div class="skill-card react-stack">
+                <div class="stack-icons">
+                    <img src="https://skillicons.dev/icons?i=react" alt="React"/>
+                    <img src="https://skillicons.dev/icons?i=next" alt="Next.js"/>
+                    <img src="https://skillicons.dev/icons?i=firebase" alt="Firebase"/>
+                    <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind"/>
+                    <img src="https://skillicons.dev/icons?i=materialui" alt="Material-UI"/>
+                </div>
+                <h4>React Ecosystem</h4>
+            </div>
+        </div>
+    </section>
 
-						</ul>
-					</section>
-					<section>
-						<h3>Research Assistant @ UMBC</h3>
-							<h4>October 2024 – Present</h4>
-						<ul>
-							<li>Assisted the DAMS lab in researching privacy policies for IoT devices</li>
-							<li>Used Python and Large Language Models (LLMs) to validate triples for Knowledge Graph construction</li>
-							<li>Contributed to advancing privacy research in the Internet of Things domain</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Teaching Fellow @ UMBC</h3>
-						<h4>January 2024 – June 2024</h4>
-						<ul>
-							<li>Assisted students in weekly office hours on Object-Oriented Programming concepts</li>
-							<li>Helped students with complex projects involving memory management using pointers, linked lists, and inheritance</li>
-							<li>Graded bi-weekly C++ projects focusing on memory management, polymorphism, and inheritance</li>
-							<li>Provided mentorship and guidance to help students master fundamental computer science concepts</li>
-						</ul>
-					</section>
-				</div>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Pantry Tracker</h3>
+                <h4>Summer 2024</h4>
+                <p>
+                    A comprehensive full-stack web application that helps users easily manage and track their pantry items. 
+                    Built with React, TypeScript, and Next.js, featuring OpenAI ChatGPT integration for intelligent recipe suggestions.
+                </p>
+                <div class="project-links">
+                    <a href="#" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>iOS Movie App</h3>
+                <h4>Summer 2024</h4>
+                <p>
+                    An IMDb-like iOS app built with Swift that displays movies using the MovieDB API. 
+                    Features Core Data integration, real-time data fetching, and user-friendly UI/UX design.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/Niraj-Dhakall/iOS-Movie-App" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="https://www.loom.com/share/d562909dbe8f4089bed0e492809461c3?sid=95d3d5fe-6657-402b-acaa-c1764696ce03" target="_blank">
+                        <i class="fas fa-play"></i>
+                        Video Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Mock Assembly Compiler</h3>
+                <h4>Academic Project</h4>
+                <p>
+                    A Python-based compiler that reads assembly-like instructions and processes them for output. 
+                    Demonstrates understanding of low-level programming concepts and compiler design principles.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/Niraj-Dhakall/project-2" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<h2>Education</h2>
-				<div class="items style1 medium onscroll-fade-in">
-					<section>
-						<h3>University of Maryland, Baltimore County</h3>
-						<h4>Bachelor of Science in Computer Science | Expected May 2026</h4>
-						<p><strong>GPA:</strong> 3.618</p>
-						<p><strong>Relevant Coursework:</strong> Data Structures, C++ Programming, Python Programming, Object-Oriented Design</p>
-					</section>
-				</div>
-			</div>
-		</section>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Student Intern @ Dogwood Gaming</h3>
+                <h4>Spring 2025</h4>
+                <ul>
+                    <li>Built an AI marketing tool for trend analysis, strategy optimization, and automation</li>
+                    <li>Aligned backend development with business goals using Python and Go</li>
+                    <li>Implemented OAuth for authentication and built ETL pipelines for large-scale data</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>Research Assistant @ UMBC</h3>
+                <h4>October 2024 – Present</h4>
+                <ul>
+                    <li>Assisted the DAMS lab in researching privacy policies for IoT devices</li>
+                    <li>Used Python and Large Language Models (LLMs) to validate triples for Knowledge Graph construction</li>
+                    <li>Contributed to advancing privacy research in the Internet of Things domain</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>Teaching Fellow @ UMBC</h3>
+                <h4>January 2024 – June 2024</h4>
+                <ul>
+                    <li>Assisted students in weekly office hours on Object-Oriented Programming concepts</li>
+                    <li>Helped students with complex projects involving memory management using pointers, linked lists, and inheritance</li>
+                    <li>Graded bi-weekly C++ projects focusing on memory management, polymorphism, and inheritance</li>
+                    <li>Provided mentorship and guidance to help students master fundamental computer science concepts</li>
+                </ul>
+            </div>
+        </div>
 
-		<footer class="wrapper style1 align-center">
-			<div class="inner">
-				<p>&copy; Niraj Dhakal 2025.</p>
-			</div>
-		</footer>
-	</div>
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>University of Maryland, Baltimore County</h3>
+                <h4>Bachelor of Science in Computer Science | Expected May 2026</h4>
+                <p><strong>GPA:</strong> 3.618</p>
+                <p><strong>Relevant Coursework:</strong> Data Structures, C++ Programming, Python Programming, Object-Oriented Design</p>
+            </div>
+        </div>
+    </section>
 
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-</body>
-</html>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Niraj Dhakal. Crafted with passion and code.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all project cards and timeline items
+        document.querySelectorAll('.project-
